@@ -1,0 +1,88 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: var(--spacing-lg) 0;
+  transition: all var(--transition-normal);
+  background: transparent;
+}
+
+.header.scrolled {
+  padding: var(--spacing-md) 0;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: var(--color-accent-gold);
+}
+
+.navigation ul {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-lg);
+}
+
+.navigation a {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.navigation a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent-gold);
+  transition: width var(--transition-fast);
+}
+
+.navigation a:hover::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xs);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.icon-button:hover {
+  color: var(--color-accent-gold);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    display: none; /* In a full app, this would be a hamburger menu */
+  }
+}

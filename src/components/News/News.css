@@ -1,0 +1,94 @@
+.news-section {
+  padding: var(--spacing-xxl) var(--spacing-lg);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.news-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.news-image.bg-1 {
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), radial-gradient(circle at center, #2c3e2c, #0a0a0a);
+}
+
+.news-image.bg-2 {
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), radial-gradient(circle at center, #3e2c2c, #0a0a0a);
+}
+
+.news-image.bg-3 {
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), radial-gradient(circle at center, #2c2c3e, #0a0a0a);
+}
+
+.news-content {
+  padding: var(--spacing-lg);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-accent-gold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.news-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.news-content p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-lg);
+  flex-grow: 1;
+}
+
+.news-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-md);
+}
+
+.news-date {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.read-more {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-accent-gold);
+}
+
+.news-actions {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}

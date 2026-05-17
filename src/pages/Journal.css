@@ -1,0 +1,116 @@
+.journal-page {
+  padding-top: 120px; /* Space for the header */
+  padding-bottom: var(--spacing-xxl);
+}
+
+.journal-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.journal-header h1 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  color: var(--color-accent-gold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.journal-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.journal-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.journal-image-link {
+  display: block;
+  width: 100%;
+}
+
+.journal-image {
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.journal-card:hover .journal-image {
+  transform: scale(1.03);
+}
+
+.journal-content {
+  padding: var(--spacing-lg);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.journal-category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-accent-gold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.journal-title-link {
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+
+.journal-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+  transition: color var(--transition-fast);
+}
+
+.journal-title-link:hover h3 {
+  color: var(--color-accent-gold-light);
+}
+
+.journal-content p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-lg);
+  flex-grow: 1;
+}
+
+.journal-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-md);
+}
+
+.journal-date {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.read-more {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-accent-gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.read-more:hover {
+  color: var(--color-accent-gold-light);
+}
