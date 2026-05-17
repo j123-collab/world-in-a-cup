@@ -6,6 +6,7 @@ import Article from './pages/Article';
 import Collection from './pages/Collection';
 import Product from './pages/Product';
 import Origin from './pages/Origin';
+import MapPage from './pages/MapPage';
 import './App.css'; 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/collection/:category" element={<Collection />} />
             <Route path="/product/:id" element={<Product />} />
             <Route path="/origin/:regionId" element={<Origin />} />
+            <Route path="/map" element={<MapPage />} />
           </Routes>
         </main>
         
