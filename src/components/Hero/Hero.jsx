@@ -1,6 +1,14 @@
 import './Hero.css';
 
 const Hero = () => {
+  const scrollToCollection = () => {
+    const element = document.getElementById('shop');
+    if (element) {
+      const y = element.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="hero">
       <div className="hero-background" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/hero_bg_1779026996768.png)` }}></div>
@@ -14,7 +22,7 @@ const Hero = () => {
         <p className="hero-author">— The Mad Hatter</p>
         
         <div className="hero-actions">
-          <button className="btn-primary">Explore Collection</button>
+          <button className="btn-primary" onClick={scrollToCollection}>Explore Collection</button>
         </div>
       </div>
       
