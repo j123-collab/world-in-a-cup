@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +14,26 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          const y = element.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(targetId);
+      if (element) {
+        const y = element.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
@@ -24,10 +46,10 @@ const Header = () => {
         
         <nav className="navigation">
           <ul>
-            <li><a href="#shop">Shop Teas</a></li>
-            <li><Link to="/map">Origins</Link></li>
+            <li><a href="#shop" onClick={(e) => handleNavClick(e, 'shop')}>Shop Teas</a></li>
+            <li><a href="#map" onClick={(e) => handleNavClick(e, 'map')}>Origins</a></li>
             <li><Link to="/journal">Journal</Link></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#about" onClick={(e) => handleNavClick(e, 'about')}>About</a></li>
           </ul>
         </nav>
         
